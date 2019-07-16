@@ -1,0 +1,414 @@
+* {
+  color: rgba(255, 255, 255, 0.473);
+  font-family: monospace;
+  font-size: 110%;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 15px 5px 15px;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+  height: 75px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+}
+
+p {
+  color: rgb(224, 144, 144);
+  font-size: 0.9em;
+  padding-left: 5px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.active {
+  color: white;
+}
+
+.logged {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px;
+  width: 15%;
+}
+
+h3 {
+  margin: 0px;
+}
+
+.navbarr {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding-left: 0px;
+}
+
+li:hover:before {
+  color: white;
+  font-size: 1.2em;
+}
+
+li {
+  margin: 0px 15px;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: none;
+}
+
+a:visited {
+  color: white;
+}
+
+.disableMe {
+  pointer-events: none;
+  cursor: default;
+}
+
+li.effect-shine:hover,
+.active,
+p:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+}
+
+.buttons {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 5s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+.btn-toggle {
+  margin: 0 4rem;
+  padding: 0;
+  position: relative;
+  border: none;
+  height: 1.5rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+  color: #6b7381;
+  background: #999;
+}
+
+.btn-toggle:focus,
+.btn-toggle.focus,
+.btn-toggle:focus.active,
+.btn-toggle.focus.active {
+  outline: none;
+}
+
+.btn-toggle:before,
+.btn-toggle:after {
+  line-height: 1.5rem;
+  width: 4rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+  transition: opacity 0.25s;
+}
+
+.btn-toggle:before {
+  content: 'EN';
+  left: -4rem;
+}
+
+.btn-toggle:after {
+  content: 'ES';
+  right: -4rem;
+  opacity: 0.5;
+}
+
+.btn-toggle>.handle {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 1.125rem;
+  background: #fff;
+  transition: left 0.25s;
+}
+
+.btn-toggle.active {
+  transition: background-color 0.25s;
+}
+
+.btn-toggle.active>.handle {
+  left: 1.6875rem;
+  transition: left 0.25s;
+}
+
+.btn-toggle.active:before {
+  opacity: 0.5;
+}
+
+.btn-toggle.active:after {
+  opacity: 1;
+}
+
+.btn-toggle.btn-sm:before,
+.btn-toggle.btn-sm:after {
+  line-height: -0.5rem;
+  color: #fff;
+  letter-spacing: 0.75px;
+  left: 0.4125rem;
+  width: 2.325rem;
+}
+
+.btn-toggle.btn-sm:before {
+  text-align: right;
+}
+
+.btn-toggle.btn-sm:after {
+  text-align: left;
+  opacity: 0;
+}
+
+.btn-toggle.btn-sm.active:before {
+  opacity: 0;
+}
+
+.btn-toggle.btn-sm.active:after {
+  opacity: 1;
+}
+
+.btn-toggle:before,
+.btn-toggle:after {
+  color: #6b7381;
+}
+
+.btn-toggle.active {
+  background-color: #666;
+}
+
+.btn-toggle.btn-sm {
+  margin: 0 0.5rem;
+  padding: 0;
+  position: relative;
+  border: none;
+  height: 1.5rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+}
+
+.btn-toggle.btn-sm:focus,
+.btn-toggle.btn-sm.focus,
+.btn-toggle.btn-sm:focus.active,
+.btn-toggle.btn-sm.focus.active {
+  outline: none;
+}
+
+.btn-toggle.btn-sm:before,
+.btn-toggle.btn-sm:after {
+  line-height: 1.5rem;
+  width: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+  transition: opacity 0.25s;
+}
+
+.btn-toggle.btn-sm:before {
+  content: 'EN';
+  left: -0.5rem;
+}
+
+.btn-toggle.btn-sm:after {
+  content: 'ES';
+  right: -0.5rem;
+  opacity: 0.5;
+}
+
+.btn-toggle.btn-sm>.handle {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 1.125rem;
+  background: #fff;
+  transition: left 0.25s;
+}
+
+.btn-toggle.btn-sm.active {
+  transition: background-color 0.25s;
+}
+
+.btn-toggle.btn-sm.active>.handle {
+  left: 1.6875rem;
+  transition: left 0.25s;
+}
+
+.btn-toggle.btn-sm.active:before {
+  opacity: 0.5;
+}
+
+.btn-toggle.btn-sm.active:after {
+  opacity: 1;
+}
+
+.btn-toggle.btn-sm.btn-sm:before,
+.btn-toggle.btn-sm.btn-sm:after {
+  line-height: -0.5rem;
+  color: #fff;
+  letter-spacing: 0.75px;
+  left: 0.4125rem;
+  width: 2.325rem;
+}
+
+.btn-toggle.btn-sm.btn-sm:before {
+  text-align: right;
+}
+
+.btn-toggle.btn-sm.btn-sm:after {
+  text-align: left;
+  opacity: 0;
+}
+
+.btn-toggle.btn-sm.btn-sm.active:before {
+  opacity: 0;
+}
+
+.btn-toggle.btn-sm.btn-sm.active:after {
+  opacity: 1;
+}
+
+.btn-toggle.btn-sm.btn-xs:before,
+.btn-toggle.btn-sm.btn-xs:after {
+  display: none;
+}
+
+.toggleMenu {  
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  display: none;
+  margin: 0px;
+  padding: 0px;
+  z-index: 100;
+}
+
+.toggleMenu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #999;
+  margin: 5px 0px;
+  border-radius: 2px; 
+}
+
+@media (max-width: 730px) {
+
+  #wrapper {
+    background-color: #222;
+    z-index: 10;
+    flex-direction: row;  
+    flex-wrap: wrap;
+    height: 100%;    
+    width: 100%;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    font-size: 2em;
+    left: -100%;
+  }
+
+  #wrapper.activeBar {
+    left: 0px;
+  }
+
+  .navDiv {
+    width: 100%;    
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 50%; 
+  }
+
+  .navbarr {
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+    justify-self: center;
+    padding: 10px;        
+    width: 100%;
+    height: 50px;        
+  }
+
+  .logged{
+    justify-content: center;
+    align-content: baseline;
+    align-self: center;   
+    justify-self: center; 
+    font-size: 0.8em;        
+    height: 50px;
+    width: 100%;       
+    flex-direction: column;    
+  }
+
+  .toggleMenu {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  * {
+    font-size: 105%;
+  }
+
+  li {
+    margin: 0px 10px;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 730px) {
+  .logged {
+    flex-direction: column;
+  }
+
+  li {
+    margin: 0px 5px;
+  }
+}
+

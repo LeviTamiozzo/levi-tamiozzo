@@ -1,0 +1,64 @@
+<div class="wrapper">
+
+  <div class="contactHeader">
+    <div class="photoDiv">
+      <img src="../../../assets/LeviTamiozzo.png" alt="" class="photo">
+    </div>
+    <div class="contactInfo">
+      <h4>
+        Levi Tamiozzo
+      </h4>
+      <p>Córdoba Capital, Argentina</p>
+      <a href="tel: +5493518172255">351 817 2255</a> <br>
+      <a href="mailto:levi.tzzo@gmail.com">levi.tzzo@gmail.com</a>
+    </div>
+  </div>
+
+  <form [formGroup]="contactMe" (ngSubmit)="sendMessage()">
+
+    <div class="shortImput" *ngIf="!loading">
+      <div class="interForm">
+        <input type="text" placeholder="email" formControlName="email" class="form-control">
+        <div *ngIf="email.errors?.required && submitted" class="validation" [@validationAnimation]>
+          {{ validations.emptyEmail[utilitiesService.selectedLanguage] }}
+        </div>
+        <div *ngIf="email.errors?.email && submitted" class="validation" [@validationAnimation]>
+          {{ validations.invalidEmail[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+
+      <div class="interForm shortInput" *ngIf="!loading">
+        <input type="text" placeholder="{{ placeholders.name[utilitiesService.selectedLanguage] }}"
+          formControlName="name" class="form-control">
+        <div *ngIf="name.invalid && submitted" class="validation" [@labelAnimation]>
+          {{ validations.name[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="loaderDiv" *ngIf="loading" [@validationAnimation]>
+        <app-loader></app-loader>
+    </div>
+    
+
+    <div class="message" *ngIf="!loading" [@validationAnimation]>
+      <div>
+        <textarea cols="30" rows="10" wrap="soft" placeholder="{{ placeholders.message[utilitiesService.selectedLanguage] }}" formControlName="message" class="form-control"></textarea>
+        <div *ngIf="message.invalid && submitted" class="validation" [@labelAnimation]>
+          {{ validations.message[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="divButton" *ngIf="!loading" [@validationAnimation]>
+      <div *ngIf="emailSended" class="validation" [@labelAnimation]>
+        {{ validations.emailSended[utilitiesService.selectedLanguage] }}
+      </div>
+      <div>
+        <button class="btn btn-outline-secondary animated flas">
+          Enviar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

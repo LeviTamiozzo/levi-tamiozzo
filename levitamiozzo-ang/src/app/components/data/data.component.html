@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div>
+    <h3>
+      {{ textDataCares1[utilitiesService.selectedLanguage] }}
+    </h3> <br>
+
+    <h5 *ngIf="userId != '' && userId != null">
+      {{ textDataCares2[utilitiesService.selectedLanguage] }}
+    </h5>
+
+    <h5 *ngIf="userId == null || userId == ''">
+      {{ textDataCares3[utilitiesService.selectedLanguage] }}
+    </h5>
+
+  </div>
+
+  <app-login *ngIf="userId == null || userId == '' && !utilitiesService.loadingData" [@validationAnimation]></app-login>
+  <app-todo *ngIf="userId != '' && userId != null && !utilitiesService.loadingData" [@validationAnimation]></app-todo>
+  <app-loader *ngIf="utilitiesService.loadingData" [@validationAnimation]></app-loader>
+
+  <div class="buttonDiv">
+    <button id="continueButton" routerLink="/skills" type="button" class="btn btn-outline-secondary animated flas">
+      {{ button[utilitiesService.selectedLanguage ] }} </button>
+  </div>
+</div>

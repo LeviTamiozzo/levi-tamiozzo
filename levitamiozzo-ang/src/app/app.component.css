@@ -1,0 +1,15 @@
+router-outlet {
+  display: none;
+}
+
+.routeContainer {
+  position: relative;
+}
+
+.routerContainer > * {
+  display: block;
+}
+
+app-header {
+  width: 100%;
+}

@@ -1,0 +1,50 @@
+.wrapper {  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;  
+  max-width: 1200px;
+}
+
+.textDiv {
+  text-align: center;
+}
+
+.buttonDiv {
+  align-self: flex-end;  
+  margin-top: 50px;
+}
+
+#continueButton {
+  right: 25%;  
+  -webkit-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#onlyMobile {
+  display: none;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+@media (max-width: 730px) {
+  .wrapper {
+    margin-top: 40%;    
+  }
+}

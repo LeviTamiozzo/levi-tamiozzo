@@ -1,0 +1,99 @@
+<div class="wrapper">
+  <div class="labelDiv">
+    <h6>{{ labels.register[utilitiesService.selectedLanguage] }}</h6>
+    <div *ngIf="validations.userAlreadyExists" class="validation" [@labelAnimation]>
+      {{  labels.userAlreadyExists[utilitiesService.selectedLanguage] }}
+    </div>
+  </div>
+  <form [formGroup]="user" (ngSubmit)="registerUser()">
+
+    <div class="subForm">
+      <div class="interForm">
+        <input type="text" placeholder="{{ placeholders.name[utilitiesService.selectedLanguage] }}"
+          formControlName="name" class="form-control">
+        <div *ngIf="name.invalid && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredName[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+
+      <div class="interForm">
+        <input type="text" placeholder="{{ placeholders.surname[utilitiesService.selectedLanguage] }}"
+          formControlName="surname" class="form-control">
+        <div *ngIf="surname.invalid && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredSurname[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subForm">
+      <div class="interForm">
+        <input type="text" placeholder="email" formControlName="email" class="form-control">
+        <div *ngIf="email.errors?.required && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredEmail[utilitiesService.selectedLanguage] }}
+        </div>
+
+        <div *ngIf="email.errors?.email && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.emailEmail[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+
+      <div class="interForm">
+        <input type="password" placeholder="{{ placeholders.password[utilitiesService.selectedLanguage] }}"
+          formControlName="password" class="form-control">
+        <div *ngIf="password.errors?.required && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredPassword[utilitiesService.selectedLanguage] }}
+        </div>
+        <div *ngIf="password.errors?.pattern && validations.userSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.invalidPassword[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subForm">
+      <div class="interForm">
+        <button class="btn btn-outline-secondary animated flas">
+          {{ buttons.register[utilitiesService.selectedLanguage] }}</button>
+      </div>
+    </div>
+
+  </form>
+
+  <br>
+
+  <div class="labelDiv">
+    <h6>{{ labels.login[utilitiesService.selectedLanguage] }}</h6>
+    <div *ngIf="validations.invalidLogin" class="validation" [@labelAnimation]>
+      {{  labels.invalidLogin[utilitiesService.selectedLanguage] }}
+    </div>
+  </div>
+  <form [formGroup]="userToLogin" (ngSubmit)="loginUser()">
+
+    <div class="subForm">
+      <div class="interForm">
+        <input type="text" placeholder="email" formControlName="emailUserToLogin" class="form-control">
+        <div *ngIf="emailUserToLogin.errors?.required && validations.userToLoginSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredEmailLogin[utilitiesService.selectedLanguage] }}
+        </div>
+        <div *ngIf="emailUserToLogin.errors?.email && validations.userToLoginSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.emailEmail[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+
+      <div class="interForm">
+        <input type="password" placeholder="{{ placeholders.password[utilitiesService.selectedLanguage] }}"
+          formControlName="passwordUserToLogin" class="form-control">
+        <div *ngIf="passwordUserToLogin.errors?.required && validations.userToLoginSubmitted" class="validation" [@validationAnimation]>
+          {{ labels.requiredPasswordLogin[utilitiesService.selectedLanguage] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subForm">
+      <div class="interForm">
+        <button class="btn btn-outline-secondary animated flas">
+          {{ buttons.login[utilitiesService.selectedLanguage] }}</button>
+      </div>
+    </div>
+
+  </form>
+</div>

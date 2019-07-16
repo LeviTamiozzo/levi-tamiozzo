@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="intro">
+    <h3>
+      {{ textIntroTyped }}<span>|</span>
+    </h3>
+  </div>
+  <div>
+    <button id="continueButton" routerLink="/learning" type="button" class="btn btn-outline-secondary animated flas"
+    [disabled]="utilitiesService.languageDisabled">
+      {{ button[utilitiesService.selectedLanguage ] }} </button>
+  </div>
+</div>

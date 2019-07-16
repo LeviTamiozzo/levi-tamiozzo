@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;  
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.subForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;    
+}
+
+.interForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 250px;
+  max-width: 250px;  
+}
+
+.sucess {
+  color: rgb(184, 245, 135);
+  padding: 5px 20px 0 5px;
+}
+
+.validation {
+  color: rgb(238, 158, 158);
+  padding: 5px 20px 0 5px;  
+  text-align: left;
+}
+
+div {  
+  padding: 5px;
+}
+
+.btn {
+  height: 100%;
+  -webkit-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+  max-height: 38px;
+}
+
+.labelDiv {
+  display: flex;
+  flex-direction: row;   
+}
+
+.labelDiv .validation {
+  padding: 0px 5px;
+}
+
+h6 {
+  margin-left: 15px;
+  width: 100px;
+  min-width: 100px;
+  border-bottom: solid 1px #666;
+  padding: 0 0 5px 5px;
+  text-align: left;
+}
+
+button {
+  align-self: flex-start;  
+}
+
+@media (max-width: 700px) {
+  form {
+    flex-direction: row;    
+  }
+
+  .subForm {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1300px) {
+  form {
+    flex-wrap: nowrap;
+  }
+}

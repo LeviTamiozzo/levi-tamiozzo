@@ -1,0 +1,57 @@
+.wrapper {   
+  display: flex;
+  flex-direction: column;   
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;  
+  max-width: 1200px;
+}
+
+.sub-group {
+  margin-top: 50px;  
+}
+
+.sub-group h5 {
+  color: rgb(245, 216, 216);
+}
+
+.sub1 {
+  margin-top: 0px;
+}
+
+#continueButton {
+  -webkit-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+  float: right;
+  visibility: hidden;
+  opacity: 0;  
+}
+
+.buttonDiv {
+  margin-top: 25px;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+@media (max-width: 730px) {
+  .wrapper {
+    margin-top: 15%;
+  }
+
+  .sub-group {
+    margin-top: 25px;
+  }
+}

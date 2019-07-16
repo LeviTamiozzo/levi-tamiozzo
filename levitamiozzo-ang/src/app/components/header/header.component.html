@@ -1,0 +1,48 @@
+<div class="toggleMenu" (click)="toggleSidebar()" [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div id="wrapper">
+
+  <div class="buttons">
+    <div>
+      <button type="button" class="btn btn-sm btn-toggle" data-on="ES " data-toggle="button" aria-pressed="false"
+        autocomplete="off" (click)="utilitiesService.changeLanguage()" (click)="utilitiesService.introPage ? this.toggleSidebar(): false;" 
+        [disabled]="utilitiesService.languageDisabled && utilitiesService.introPage">
+        <div class="handle"></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="navDiv">
+    <ul class="navbarr">
+      <li class="effect-shine"> <a routerLink="/intro" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.intro[utilitiesService.selectedLanguage] }}</a></li>
+      <li class="effect-shine"> <a routerLink="/learning" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.fastLearner[utilitiesService.selectedLanguage] }} </a></li>
+      <li class="effect-shine"> <a routerLink="/responsive" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.responsive[utilitiesService.selectedLanguage] }} </a></li>
+      <li class="effect-shine"> <a routerLink="/data" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.dataCares[utilitiesService.selectedLanguage] }} </a></li>
+      <li class="effect-shine"> <a routerLink="skills" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.skills[utilitiesService.selectedLanguage] }} </a></li>
+      <li class="effect-shine"> <a routerLink="contact" routerLinkActive="active"
+          [ngClass]="{disableMe: utilitiesService.languageDisabled && utilitiesService.introPage}" (click)="toggleSidebar()">
+          {{ navbar.contact[utilitiesService.selectedLanguage] }} </a></li>
+    </ul>
+  </div>
+
+
+  <div class="logged">
+    <h3 *ngIf="name != null && name !=''" class="logOut"> {{ navbar.hi[utilitiesService.selectedLanguage] }}
+      {{ name }}!
+    </h3>
+    <p *ngIf="name != null && name !=''" (click)="logOut()">{{ navbar.logOut[utilitiesService.selectedLanguage] }}</p>
+  </div>

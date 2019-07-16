@@ -1,0 +1,42 @@
+<div class="wrapper">
+
+  <div class="tableContainer table1">
+    <h5>{{ labels.todo[utilitiesService.selectedLanguage] }}</h5>
+    <table>
+      <tr>
+        <td>
+          <input type="text" placeholder="Add new items..." (keydown)="onKeydown($event)" [(ngModel)]="this.newTodo">
+        </td>
+      </tr>
+      <tr *ngFor="let todo of (this.todos.todos) | filterTodo: false let i = index">
+        <td class="tableData">
+          <input type="checkbox" name="i" [(ngModel)]="todo[0]" id="{{todo[1] + i + todo[0]}}"
+            (change)="onCheckboxChange()">
+          <label for="{{todo[1] + i + todo[0]}}">
+            <span></span>
+            {{ todo[1] }}
+          </label>
+          <i class="fas fa-trash-alt" (click)="deleteTodo(todo)" [ngStyle]="isMobile && {'visibility': 'visible'}"></i>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="tableContainer table2">
+
+    <h5>{{ labels.done[utilitiesService.selectedLanguage] }}</h5>
+    <table>
+      <tr *ngFor="let todo of (this.todos.todos) | filterTodo: true let i = index">
+        <td class="tableData">
+          <input type="checkbox" name="i" [(ngModel)]="todo[0]" id="{{todo[1] + i + todo[0]}}"
+            (change)="onCheckboxChange()">
+          <label for="{{todo[1] + i + todo[0]}}" class="checked">
+            <span></span>
+            {{ todo[1] }}
+          </label>
+          <i class="fas fa-trash-alt" (click)="deleteTodo(todo)" [ngStyle]="isMobile && {'visibility': 'visible'}"></i>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

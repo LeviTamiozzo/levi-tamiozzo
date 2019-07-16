@@ -1,0 +1,81 @@
+.wrapper {  
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10%;
+  width: 50%;  
+  max-width: 1200px;
+}
+
+h3 {    
+  letter-spacing: .15em;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: left; 
+  white-space: wrap;   
+}
+
+.intro {  
+  width: 100%;
+  justify-self: center;
+  align-self: center; 
+}
+
+span {
+  font-size: 1.2em;
+  color: orange;
+  animation:
+  blink-caret .5s step-end infinite;
+}
+
+#continueButton {
+  position: relative;
+  right: 10%;
+  margin-top: 30px;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    visibility: hidden
+  }
+
+  50% {
+    visibility: visible
+  }
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+@media (max-width: 730px) {
+  .wrapper {
+    margin-top: 40%;   
+    width: 80%; 
+  }
+
+  h3 {    
+    letter-spacing: .10em;
+    font-size: 1.8em;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: left; 
+    white-space: wrap;   
+  }
+}

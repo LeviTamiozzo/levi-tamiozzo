@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div>
+    <div class="sub-group sub1">
+      <h3>Frontend</h3>
+      <h5>angular 7 | html5 | css3 | bootstrap | flexbox | css grid</h5>
+    </div>
+    <div class="sub-group">
+      <h3>Backend</h3>
+      <h5>nodeJs | expressJs | mongoDb | sql server</h5>
+    </div>
+    <div class="sub-group">
+      <h3>{{ labels.additionals[utilitiesService.selectedLanguage] }}</h3>
+      <h5>git | photoshop | illustrator</h5>
+    </div>
+    <div class="sub-group">
+      <h3>{{ labels.soft[utilitiesService.selectedLanguage] }}</h3>
+      <h5>{{ soft.motivated[utilitiesService.selectedLanguage] }} |
+        {{ soft.predisposed[utilitiesService.selectedLanguage] }}
+        | {{ soft.humor[utilitiesService.selectedLanguage] }}</h5>
+    </div>
+  </div>
+
+  <div class="buttonDiv">
+    <button id="continueButton" routerLink="/contact" type="button" class="btn btn-outline-secondary animated flas">
+      {{ button[utilitiesService.selectedLanguage ] }} </button>
+  </div>
+</div>

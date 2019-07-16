@@ -1,0 +1,5 @@
+  .rubik-loader {
+    width: 64px;
+    height: 64px;    
+    background-image: url("../../../assets/Loader.gif");
+  }

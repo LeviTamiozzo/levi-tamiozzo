@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+  <div>
+    <h3>
+      {{ textLearning1[utilitiesService.selectedLanguage] }}
+    </h3>
+  </div>
+
+  <div>
+    <h4>
+      {{ textLearning2[utilitiesService.selectedLanguage] }}
+    </h4>
+  </div>
+
+  <div class="inputs">
+    <div class="input-div">
+      <input name="lesson" [(ngModel)]="lesson" type="text" class="form-control input"
+        [disabled]="utilitiesService.lesson.length != 0"
+        placeholder="{{ utilitiesService.placeholderLearning[utilitiesService.selectedLanguage] }}" id="input-box">
+      <div *ngIf="lesson == '' && validation" class="validation">
+        {{ textValidation[utilitiesService.selectedLanguage] }}
+      </div>
+    </div>
+    <div class="button-div">
+      <button type="button" [disabled]="utilitiesService.lesson.length != 0"
+        class="btn btn-outline-secondary animated flas" (mouseover)="learn()" (click)="nothingToLearn()">
+        {{ buttonText[utilitiesService.selectedLanguage] }} </button>
+    </div>
+  </div>
+
+  <div class="learned" id="learned">
+    <h3> {{ learnedIntro[utilitiesService.selectedLanguage] }}
+      <span> {{ utilitiesService.lesson }} </span>
+      <b id="onlyWeb"> {{ learnedEnd[utilitiesService.selectedLanguage] }} </b>
+      <b id="onlyMobile"> {{ learnedEndMobile[utilitiesService.selectedLanguage] }} </b>
+    </h3>
+  </div>
+
+  <div>
+    <button id="continueButton" routerLink="/responsive" type="button" class="btn btn-outline-secondary animated flas">
+      {{ button[utilitiesService.selectedLanguage ] }} </button>
+  </div>
+</div>
